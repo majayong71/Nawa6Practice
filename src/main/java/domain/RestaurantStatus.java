@@ -1,6 +1,6 @@
 package domain;
 
-public enum RestaurnatStatus {
+public enum RestaurantStatus {
     REGISTERED, // 등록됨
     DELETED //삭제됨
 }
