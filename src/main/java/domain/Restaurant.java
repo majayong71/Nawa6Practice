@@ -98,6 +98,26 @@ public class Restaurant {
         this.mainImageUrl = mainImageUrl;
     }
 
-    )
+    public void update(
+            String name, RestaurantCategory category, String address, String businessHours, String phoneNumber,
+            String description, String mainImageUrl, boolean visible
+    ) {
+        this.name = name;
+        this.category = category;
+        this.address = address;
+        this.businessHours = businessHours;
+        this.phoneNumber = phoneNumber;
+        this.description = description;
+        this.mainImageUrl = mainImageUrl;
+        this.visible = visible;
+    }
 
+    public void deleted() {
+        if (this.status != RestaurantStatus.REGISTERED) {
+            throw new IllegalStateException("Check fail");
+        }
+
+        this.status = RestaurantStatus.DELETED;
+        this.deletedAt = LocalDateTime.now();
+    }
 }
