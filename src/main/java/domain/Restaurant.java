@@ -85,10 +85,7 @@ public class Restaurant {
      */
     private LocalDateTime deletedAt;
 
-    public Restaurant(
-            String name, RestaurantCategory category, String address, String businessHours, String phoneNumber,
-            String description, String mainImageUrl
-    ) {
+    public Restaurant(String name, RestaurantCategory category, String address, String businessHours, String phoneNumber, String description, String mainImageUrl) {
         this.name = name;
         this.category = category;
         this.address = address;
@@ -98,10 +95,7 @@ public class Restaurant {
         this.mainImageUrl = mainImageUrl;
     }
 
-    public void update(
-            String name, RestaurantCategory category, String address, String businessHours, String phoneNumber,
-            String description, String mainImageUrl, boolean visible
-    ) {
+    public void update(String name, RestaurantCategory category, String address, String businessHours, String phoneNumber, String description, String mainImageUrl, boolean visible) {
         this.name = name;
         this.category = category;
         this.address = address;
@@ -112,9 +106,9 @@ public class Restaurant {
         this.visible = visible;
     }
 
-    public void deleted() {
+    public void delete() {
         if (this.status != RestaurantStatus.REGISTERED) {
-            throw new IllegalStateException("Check fail");
+            throw new IllegalStateException("check fail");
         }
 
         this.status = RestaurantStatus.DELETED;
