@@ -68,6 +68,9 @@ public class User {
         // 전화번호 , 회원정보 수정 등
     }
 
+    /**
+     * 삭제
+     */
     public void delete() {
         if (this.status != UserStatus.ACTIVE) {
             throw new IllegalStateException("check fail");

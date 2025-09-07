@@ -24,7 +24,7 @@ public class Restaurant {
     /**
      * 이름
      **/
-    @Column(length = 20)
+    @Column(length = 25)
     private String name;
 
     /**
@@ -95,6 +95,9 @@ public class Restaurant {
         this.mainImageUrl = mainImageUrl;
     }
 
+    /**
+     * 수정
+     */
     public void update(String name, RestaurantCategory category, String address, String businessHours, String phoneNumber, String description, String mainImageUrl, boolean visible) {
         this.name = name;
         this.category = category;
@@ -106,6 +109,9 @@ public class Restaurant {
         this.visible = visible;
     }
 
+    /**
+     * 삭제
+     */
     public void delete() {
         if (this.status != RestaurantStatus.REGISTERED) {
             throw new IllegalStateException("check fail");

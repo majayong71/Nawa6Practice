@@ -73,12 +73,18 @@ public class Review {
         this.rating = rating;
     }
 
+    /**
+     * 수정
+     */
     public void update(String content, String imageUrl, int rating) {
         this.content = content;
         this.imageUrl = imageUrl;
         this.rating = rating;
     }
 
+    /**
+     * 삭제
+     */
     public void deleted() {
         if (this.status != ReviewStatus.REGISTERED) {
             throw new IllegalStateException("check fail");

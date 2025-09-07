@@ -85,6 +85,9 @@ public class Menu {
         this.imageUrl = imageUrl;
     }
 
+    /**
+     * 수정
+     */
     public void update(
             String name, int price, String description, boolean ismain, String imageUrl
     ) {
@@ -95,6 +98,9 @@ public class Menu {
         this.imageUrl = imageUrl;
     }
 
+    /**
+     * 삭제
+     */
     public void deleted() {
         if (this.status != MenuStatus.REGISTERED) {
             throw new IllegalStateException("check fail");
