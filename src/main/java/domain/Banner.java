@@ -18,5 +18,36 @@ public class Banner {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    /**
+     * 배너 이미지
+     */
+
+    /**
+     * 링크 Url
+     */
+
+    /**
+     * 노출 순서
+     */
+
+    /**
+     * 상태
+     */
+
+    /**
+     * 노출 여부
+     */
+
+    /**
+     * 노출 일시
+     */
+
+    /**
+     * 생성 일시
+     */
+
+    /**
+     * 삭제 일시
+     */
 
 }
