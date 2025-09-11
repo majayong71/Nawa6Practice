@@ -101,7 +101,7 @@ public class Menu {
     /**
      * 삭제
      */
-    public void deleted() {
+    public void delete() {
         if (this.status != MenuStatus.REGISTERED) {
             throw new IllegalStateException("check fail");
         }

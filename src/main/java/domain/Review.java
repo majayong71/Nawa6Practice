@@ -76,7 +76,11 @@ public class Review {
     /**
      * 수정
      */
-    public void update(String content, String imageUrl, int rating) {
+    public void update(Long userId, String content, String imageUrl, int rating) {
+        if (this.user.getId() != userId) {
+            throw new IllegalArgumentException("check fail");
+        }
+
         this.content = content;
         this.imageUrl = imageUrl;
         this.rating = rating;
@@ -85,8 +89,12 @@ public class Review {
     /**
      * 삭제
      */
-    public void deleted() {
-        if (this.status != ReviewStatus.REGISTERED) {
+    public void deleted(Long userId) {
+        if (this.user.getId() != userId) {
+            throw new IllegalStateException("check fail");
+        }
+
+        if (this.status == ReviewStatus.REGISTERED) {
             throw new IllegalStateException("check fail");
         }
 

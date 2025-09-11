@@ -63,9 +63,16 @@ public class User {
     /**
      * 마이페이지 회원 정보 수정
      **/
-    private void update(String nickname) {
+    public void update(String nickname) {
         this.nickname = nickname;
         // 전화번호 , 회원정보 수정 등
+    }
+
+    /**
+     * 비밀번호 수정
+     */
+    public void updatePassword(String password) {
+        this.password = password;
     }
 
     /**
