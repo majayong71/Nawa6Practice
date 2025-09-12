@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import repository.RestaurantRepository;
 import service.RestaurantService;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Service
@@ -57,5 +58,10 @@ public class RestaurantServiceImpl implements RestaurantService {
         Restaurant restaurant = restaurantRepository.findById(id).get();
 
         restaurant.delete();
+
+        BigDecimal num1 = new BigDecimal(200);
+        BigDecimal num2 = new BigDecimal("100");
+
+        System.out.println(num1.add(num2));
     }
 }

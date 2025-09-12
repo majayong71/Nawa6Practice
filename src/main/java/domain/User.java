@@ -42,6 +42,7 @@ public class User {
      * 상태 - 가입 / 인증됨(활성화) / 비활성화 / 탈퇴
      */
     @Enumerated(EnumType.STRING)
+    @Column(length = 20)
     private UserStatus status = UserStatus.ACTIVE;
 
     /**

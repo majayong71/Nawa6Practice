@@ -57,6 +57,7 @@ public class Menu {
      * 상태
      */
     @Enumerated(EnumType.STRING)
+    @Column(length = 10)
     private MenuStatus status = MenuStatus.REGISTERED;
 
     /**
@@ -89,12 +90,12 @@ public class Menu {
      * 수정
      */
     public void update(
-            String name, int price, String description, boolean ismain, String imageUrl
+            String name, int price, String description, boolean isMain, String imageUrl
     ) {
         this.name = name;
         this.price = price;
         this.description = description;
-        this.isMain = ismain;
+        this.isMain = isMain;
         this.imageUrl = imageUrl;
     }
 
