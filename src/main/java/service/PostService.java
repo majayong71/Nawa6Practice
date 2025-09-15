@@ -10,7 +10,7 @@ public interface PostService {
     /**
      * 등록
      **/
-    void register(Long userId, PostCategory category, String title, String content, String imageUrl)
+    void register(Long userId, PostCategory category, String title, String content, String imageUrl);
 
     /**
      * 서치
