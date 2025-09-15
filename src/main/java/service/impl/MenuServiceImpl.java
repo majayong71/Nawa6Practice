@@ -1,6 +1,7 @@
 package service.impl;
 
 import domain.Menu;
+import domain.MenuStatus;
 import domain.Restaurant;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -32,7 +33,7 @@ public class MenuServiceImpl implements MenuService {
 
         Restaurant restaurant = restaurantRepository.findById(restaurantId).get();
 
-        return menuRepository.findByRestaurant(restaurant);
+        return menuRepository.findByRestaurantAndStatus(restaurant, MenuStatus.REGISTERED);
     }
 
     @Override
