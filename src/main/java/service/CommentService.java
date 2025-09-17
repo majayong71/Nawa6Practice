@@ -18,7 +18,7 @@ public interface CommentService {
     /**
      * 댓글 수정
      **/
-    void update(Long id, Long userId, String content);
+    void update(Long id, Long userId, String content, String imageUrl);
 
     /**
      * 댓글 삭제

@@ -62,12 +62,20 @@ public class Comment {
         this.imageUrl = imageUrl;
     }
 
-    public void update() {
+    public void update(Long userId, String content, String imageUrl) {
+        if (!this.user.getId().equals(userId)) {
+            throw new IllegalArgumentException("check fail");
+        }
+
         this.content = content;
         this.imageUrl = imageUrl;
     }
 
-    public void deleted() {
+    public void deleted(Long userId) {
+        if (!this.user.getId().equals(userId)) {
+            throw new IllegalArgumentException("check fail");
+        }
+
         if (this.status != CommentStatus.REGISTERED) {
             throw new IllegalStateException("check fail");
         }

@@ -40,13 +40,18 @@ public class CommentServiceImpl implements CommentService {
         return commentRepository.findByPostAndStatus(post, CommentStatus.REGISTERED);
     }
 
+    // 체크 받아보기
     @Override
-    public void update(Long id, Long userId, String content) {
+    public void update(Long id, Long userId, String content, String imageUrl) {
+        Comment comment = commentRepository.findById(id).get();
 
+        comment.update(userId, content, imageUrl);
     }
 
     @Override
     public void delete(Long id, Long userId) {
+        Comment comment = commentRepository.findById(id).get();
 
+        comment.deleted(userId);
     }
 }
