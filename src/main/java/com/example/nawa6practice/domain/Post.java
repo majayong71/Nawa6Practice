@@ -81,7 +81,11 @@ public class Post {
     /**
      * 수정
      */
-    public void update(String title, String content, PostCategory category, String imageUrl) {
+    public void update(Long userId, String title, String content, PostCategory category, String imageUrl) {
+        if (this.user.getId() != userId) {
+            throw new IllegalArgumentException("check failed.");
+        }
+
         this.title = title;
         this.content = content;
         this.category = category;
@@ -91,9 +95,13 @@ public class Post {
     /**
      * 삭제
      */
-    public void deleted() {
-        if (this.status != PostStatus.REGISTERED) {
-            throw new IllegalStateException("check fail");
+    public void delete(Long userId) {
+        if (this.user.getId() != userId) {
+            throw new IllegalArgumentException("check failed.");
+        }
+
+        if (this.status == PostStatus.DELETED) {
+            throw new IllegalStateException("check failed");
         }
 
         this.status = PostStatus.DELETED;

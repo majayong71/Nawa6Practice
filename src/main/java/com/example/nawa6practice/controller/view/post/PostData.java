@@ -4,10 +4,10 @@ import com.example.nawa6practice.domain.PostCategory;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-@Getter
 @AllArgsConstructor
-public class GetPostRes {
-    // private final Long userId = 1L; 이게 필요할까?
+@Getter
+public class PostData {
+    private final Long userId;
     private final String title;
     private final String content;
     private final PostCategory postCategory;
