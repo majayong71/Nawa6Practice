@@ -20,7 +20,7 @@ public class RestaurantController {
     /**
      * 레스토랑 등록 ( 관리자 or 크롤링 후 수동 등록 )
      */
-    @PostMapping
+    @PostMapping("/register")
     public void register(@RequestBody RegisterRestaurantReq req) {
         restaurantService.register(
                 req.getName(), req.getCategory(), req.getAddress(), req.getBusinessHours(),
