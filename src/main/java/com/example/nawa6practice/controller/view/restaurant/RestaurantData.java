@@ -14,5 +14,4 @@ public class RestaurantData {
     private final String phoneNumber;
     private final String description;
     private final String mainImageUrl;
-    private final boolean visible;
 }

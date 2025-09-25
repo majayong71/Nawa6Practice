@@ -29,7 +29,7 @@ public class MenuServiceImpl implements MenuService {
     }
 
     @Override
-    public List<Menu> getAll(Long restaurantId) {
+    public List<Menu> gets(Long restaurantId) {
 
         Restaurant restaurant = restaurantRepository.findById(restaurantId).get();
 

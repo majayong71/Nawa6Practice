@@ -9,7 +9,7 @@ public interface MenuService {
     void register(Long restaurantId, String name, int price, String description, boolean isMain, String mainImageUrl);
 
     /** 모든 메뉴 조회 **/
-    List<Menu> getAll(Long restaurantId);
+    List<Menu> gets(Long restaurantId);
 
     /** 메뉴 상세 조회 **/
     Menu get(Long id);

@@ -10,12 +10,12 @@ import java.util.stream.Collectors;
 public class GetRestaurantsRes {
     private final List<RestaurantData> restaurants;
 
-    public GetRestaurantsRes (List<Restaurant> restaurants) {
+    public GetRestaurantsRes(List<Restaurant> restaurants) {
         this.restaurants = restaurants.stream().map(restaurant -> new RestaurantData(
-                restaurant.getName(), restaurant.getCategory(), restaurant.getAddress(), restaurant.getBusinessHours(),
-                restaurant.getPhoneNumber(), restaurant.getDescription(), restaurant.getMainImageUrl(),
-                restaurant.isVisible()
-            )
+                        restaurant.getName(), restaurant.getCategory(), restaurant.getAddress(),
+                        restaurant.getBusinessHours(), restaurant.getPhoneNumber(), restaurant.getDescription(),
+                        restaurant.getMainImageUrl()
+                )
         ).collect(Collectors.toList());
     }
 }
