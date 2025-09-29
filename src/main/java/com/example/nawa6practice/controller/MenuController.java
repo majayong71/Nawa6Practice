@@ -14,7 +14,6 @@ import java.util.List;
 @RequestMapping("/menus")
 public class MenuController {
     private final MenuService menuService;
-    private final RestaurantService restaurantService;
 
     @PostMapping("/register")
     public void register(@RequestBody RegisterMenuReq req) {
