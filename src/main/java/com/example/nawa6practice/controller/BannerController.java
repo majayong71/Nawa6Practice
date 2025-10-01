@@ -12,5 +12,4 @@ public class BannerController {
 
     private final BannerService bannerService;
 
-
 }
