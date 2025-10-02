@@ -1,6 +1,7 @@
 package com.example.nawa6practice.service.impl;
 
 import com.example.nawa6practice.domain.Banner;
+import com.example.nawa6practice.domain.BannerStatus;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -18,7 +19,7 @@ public class BannerServiceImpl implements BannerService {
 
     @Override
     public List<Banner> gets() {
-        return bannerRepository.findAll();
+        return bannerRepository.findByStatusAndIsVisible(BannerStatus.REGISTERED, true);
     }
 
     @Override

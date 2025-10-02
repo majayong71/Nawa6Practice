@@ -17,7 +17,7 @@ public interface HotPostService {
     /**
      * 인기게시글 전체 조회
      **/
-    List<HotPost> gets();
+    List<HotPost> gets(HotPostCategory category, LocalDate date);
 
     /**
      * 인기게시글 수정

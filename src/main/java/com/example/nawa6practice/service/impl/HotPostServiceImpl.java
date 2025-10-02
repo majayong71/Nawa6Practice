@@ -2,6 +2,7 @@ package com.example.nawa6practice.service.impl;
 
 import com.example.nawa6practice.domain.HotPost;
 import com.example.nawa6practice.domain.HotPostCategory;
+import com.example.nawa6practice.domain.HotPostStatus;
 import com.example.nawa6practice.domain.Post;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -31,11 +32,10 @@ public class HotPostServiceImpl implements HotPostService {
     }
 
     @Override
-    public List<HotPost> gets() {
-        return hotPostRepository.findAll();
+    public List<HotPost> gets(HotPostCategory category, LocalDate date) {
+        return hotPostRepository.findByCategoryAndDate(category, date, HotPostStatus.REGISTERED);
     }
 
-    //
     @Override
     public void update(Long id, Long postId, LocalDate date, int rank, HotPostCategory hotPostCategory) {
         Post post = postRepository.findById(postId).get();

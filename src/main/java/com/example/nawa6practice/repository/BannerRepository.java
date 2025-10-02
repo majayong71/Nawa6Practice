@@ -1,7 +1,20 @@
 package com.example.nawa6practice.repository;
 
 import com.example.nawa6practice.domain.Banner;
+import com.example.nawa6practice.domain.BannerStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+import java.util.List;
 
 public interface BannerRepository extends JpaRepository<Banner, Long> {
+
+    // : 다음엔 파라미터값이 들어오고
+    @Query("""
+                    SELECT b
+                    FROM Banner b 
+                    WHERE b.status = :status AND b.isVisible = :isVisible
+                    ORDER BY b.displayOrder
+            """)
+    List<Banner> findByStatusAndIsVisible(BannerStatus status, boolean isVisible);
 }

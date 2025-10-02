@@ -29,7 +29,9 @@ public class Bookmark {
     @ManyToOne(fetch = FetchType.LAZY)
     private Post post;
 
-    /** 상태
+    /**
+     * 상태
+     *
      * @Enumerated Type.ORIGINAL = enum 순서(숫자)값을 DB에 저장
      * @Enumerated Type.STRING = enum 이름을 DB에 저장
      **/
@@ -51,7 +53,11 @@ public class Bookmark {
         this.post = post;
     }
 
-    public void delete() {
+    public void delete(User user) {
+        if (this.user != user) {
+            throw new IllegalStateException("check fail");
+        }
+
         if (this.status != BookmarkStatus.REGISTERED) {
             throw new IllegalStateException("check fail");
         }

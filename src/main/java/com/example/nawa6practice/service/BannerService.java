@@ -1,6 +1,7 @@
 package com.example.nawa6practice.service;
 
 import com.example.nawa6practice.domain.Banner;
+import com.example.nawa6practice.domain.BannerStatus;
 
 import java.util.List;
 

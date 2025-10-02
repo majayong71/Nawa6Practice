@@ -34,15 +34,14 @@ public class BookmarkServiceImpl implements BookmarkService {
         User user = userRepository.findById(userId).get();
         Post post = postRepository.findById(postId).get();
 
-        Bookmark bookmark = new Bookmark(user, post);
-
-        bookmarkRepository.save(bookmark);
+        bookmarkRepository.save(new Bookmark(user, post));
     }
 
     @Override
-    public void delete(Long id) {
+    public void delete(Long id, Long userId) {
+        User user = userRepository.findById(userId).get();
         Bookmark bookmark = bookmarkRepository.findById(id).get();
 
-        bookmark.delete();
+        bookmark.delete(user);
     }
 }
