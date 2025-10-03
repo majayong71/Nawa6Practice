@@ -24,6 +24,8 @@ public class BookmarkServiceImpl implements BookmarkService {
     private final UserRepository userRepository;
     private final PostRepository postRepository;
 
+
+    //ToDo : Repo Query 건들거 있는지 확인하고 작성하기.
     @Override
     public List<Bookmark> gets() {
         return bookmarkRepository.findByStatus(BookmarkStatus.REGISTERED);
