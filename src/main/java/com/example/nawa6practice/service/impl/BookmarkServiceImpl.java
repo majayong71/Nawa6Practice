@@ -27,6 +27,7 @@ public class BookmarkServiceImpl implements BookmarkService {
 
     //ToDo : Repo Query 건들거 있는지 확인하고 작성하기.
 
+
     @Override
     public List<Bookmark> gets() {
         return bookmarkRepository.findByStatus(BookmarkStatus.REGISTERED);
