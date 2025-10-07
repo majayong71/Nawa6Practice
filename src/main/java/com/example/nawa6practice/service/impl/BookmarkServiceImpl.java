@@ -25,7 +25,9 @@ public class BookmarkServiceImpl implements BookmarkService {
     private final PostRepository postRepository;
 
 
+
     //ToDo : Repo Query 건들거 있는지 확인하고 작성하기.
+
 
 
 
