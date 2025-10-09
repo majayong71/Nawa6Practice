@@ -31,6 +31,7 @@ public class BookmarkServiceImpl implements BookmarkService {
 
 
 
+
     @Override
     public List<Bookmark> gets() {
         return bookmarkRepository.findByStatus(BookmarkStatus.REGISTERED);
