@@ -27,9 +27,10 @@ public class BookmarkServiceImpl implements BookmarkService {
     //ToDo : Repo Query 건들거 있는지 확인하고 작성하기.
 
 
+    // 추후 세션 토큰 도입 시 user 값 변경 예정
     @Override
-    public List<Bookmark> gets() {
-        return bookmarkRepository.findByStatus(BookmarkStatus.REGISTERED);
+    public List<Bookmark> gets(Long userId) {
+        return bookmarkRepository.findByUserIdAndStatus(userId, BookmarkStatus.REGISTERED);
     }
 
     @Override

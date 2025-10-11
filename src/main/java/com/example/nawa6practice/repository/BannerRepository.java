@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface BannerRepository extends JpaRepository<Banner, Long> {
 
-    // : 다음엔 파라미터값이 들어오고
+    // : 다음엔 파라미터값이 들어감.
     @Query("""
                     SELECT b
                     FROM Banner b 

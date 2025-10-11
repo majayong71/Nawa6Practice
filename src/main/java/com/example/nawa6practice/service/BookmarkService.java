@@ -9,7 +9,7 @@ public interface BookmarkService {
     /**
      * 북마크 전체 조회
      **/
-    List<Bookmark> gets();
+    List<Bookmark> gets(Long userId);
 
     /**
      * 북마크 등록
