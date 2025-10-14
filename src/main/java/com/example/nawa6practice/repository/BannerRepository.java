@@ -12,7 +12,7 @@ public interface BannerRepository extends JpaRepository<Banner, Long> {
     // : 다음엔 파라미터값이 들어감.
     @Query("""
                     SELECT b
-                    FROM Banner b 
+                    FROM Banner b
                     WHERE b.status = :status AND b.isVisible = :isVisible
                     ORDER BY b.displayOrder
             """)

@@ -2,7 +2,6 @@ package com.example.nawa6practice.repository;
 
 import com.example.nawa6practice.domain.Bookmark;
 import com.example.nawa6practice.domain.BookmarkStatus;
-import com.example.nawa6practice.domain.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
@@ -18,6 +17,4 @@ public interface BookmarkRepository extends JpaRepository<Bookmark, Long> {
             ORDER BY b.createdAt DESC
             """)
     List<Bookmark> findByUserIdAndStatus(Long userId, BookmarkStatus status);
-
-    List<Bookmark> user(User user);
 }

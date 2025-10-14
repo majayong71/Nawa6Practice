@@ -10,10 +10,11 @@ import java.util.List;
 
 public interface CommentRepository extends JpaRepository<Comment, Long> {
 
+    // 상태값이 등록인 게시글을 가져오는 쿼리
     @Query(value = """
                 SELECT c
                 FROM Comment c
-                WHERE c.post = :post AND c.status = :status  
+                WHERE c.post = :post AND c.status = :status
                 ORDER BY c.createdAt DESC
             """)
     List<Comment> findByPostAndStatus(Post post, CommentStatus status);
