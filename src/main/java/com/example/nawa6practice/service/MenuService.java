@@ -9,6 +9,7 @@ public interface MenuService {
 
     // TODO @QUERY 짜자
 
+
     /** 메뉴 등록 **/
     void register(Long restaurantId, String name, int price, String description, boolean isMain, String mainImageUrl);
 
