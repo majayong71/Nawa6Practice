@@ -7,6 +7,9 @@ import com.example.nawa6practice.domain.SearchCategory;
 import java.util.List;
 
 public interface PostService {
+
+    //ToDo : 쿼리문 짜기
+
     /**
      * 등록
      **/
