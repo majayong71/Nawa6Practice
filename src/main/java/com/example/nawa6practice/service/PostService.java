@@ -8,8 +8,6 @@ import java.util.List;
 
 public interface PostService {
 
-    //ToDo : 쿼리문 짜기
-
     /**
      * 등록
      **/
@@ -33,6 +31,7 @@ public interface PostService {
     Post get(Long id);
 
     List<Post> getByUserId(Long userId);
+
     /**
      * 수정
      */
