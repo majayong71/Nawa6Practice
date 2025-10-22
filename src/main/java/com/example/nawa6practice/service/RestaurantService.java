@@ -8,7 +8,8 @@ import java.util.List;
 public interface RestaurantService {
     
     //ToDo : restaurant 리포 작성하기
-    
+
+
     /**
      * 레스토랑 등록 (관리자 or 크롤링 후 수동 등록 )
      **/
