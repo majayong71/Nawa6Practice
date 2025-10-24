@@ -11,6 +11,7 @@ import java.util.Optional;
 
 public interface RestaurantRepository extends JpaRepository<Restaurant, Long> {
 
+
     @Query("""
                     SELECT R
                     FROM Restaurant R
