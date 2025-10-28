@@ -22,9 +22,10 @@ public interface BookmarkRepository extends JpaRepository<Bookmark, Long> {
 
     @NonNull
     @Query("""
-        SELECT b
-        FROM Bookmark b
-        WHERE b.id = :id AND b.status = 'REGISTERED'
-""")
+                    SELECT b
+                    FROM Bookmark b
+                    WHERE b.id = :id AND b.status = 'REGISTERED'
+                    ORDER BY b.createdAt DESC
+            """)
     Optional<Bookmark> findById(@NonNull Long id);
 }

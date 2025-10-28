@@ -29,6 +29,15 @@ public interface PostRepository extends JpaRepository<Post, Long> {
             """)
     List<Post> findByUserId(Long userId);
 
+    @NonNull
+    @Query("""
+                    SELECT p
+                    FROM Post p
+                    WHERE p.status = 'REGISTERED'
+                    ORDER BY p.createdAt DESC
+            """)
+    List<Post> findAll();
+
     @Query("""
                     SELECT P
                     FROM Post P

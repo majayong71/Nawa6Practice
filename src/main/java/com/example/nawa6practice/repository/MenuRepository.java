@@ -31,8 +31,8 @@ public interface MenuRepository extends JpaRepository<Menu, Long> {
      *     또는
      *     @Query ("""
      *             SELECT m FROM Menu m
-     *             WHERE m.id = :id AND m.status = 'ACTIVE'
-     *             ORDER BY m.isMain DESC, m.id ASC
+     *             WHERE m.id = :id AND m.status = 'REGISTERED'
+     *             ORDER BY m.isMain DESC, m.id ASC (ASC 는 기본값 오름차순 1,2,3,4)
      *             """)
      *     Optional<Menu> findActiveMenuById(Long id);
      */
