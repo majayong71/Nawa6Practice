@@ -16,7 +16,7 @@ public interface PostRepository extends JpaRepository<Post, Long> {
     @Query("""
                         SELECT P
                         FROM Post p
-                        WHERE p.id = :id AND p.status = 'ACTIVE'
+                        WHERE p.id = :id AND p.status = 'REGISTERED'
                         ORDER BY p.createdAt DESC
             """)
     Optional<Post> findById(@NonNull Long id);
@@ -24,7 +24,7 @@ public interface PostRepository extends JpaRepository<Post, Long> {
     @Query("""
             SELECT P
             FROM Post p
-            WHERE p.user.id = :userId AND p.status = 'ACTIVE'
+            WHERE p.user.id = :userId AND p.status = 'REGISTERED'
             ORDER BY p.createdAt DESC
             """)
     List<Post> findByUserId(Long userId);
@@ -32,7 +32,7 @@ public interface PostRepository extends JpaRepository<Post, Long> {
     @Query("""
                     SELECT P
                     FROM Post P
-                    WHERE p.category = :category AND p.status = 'ACTIVE'
+                    WHERE p.category = :category AND p.status = 'REGISTERED'
                     ORDER BY p.createdAt DESC
             """)
     List<Post> findByCategory(PostCategory category);

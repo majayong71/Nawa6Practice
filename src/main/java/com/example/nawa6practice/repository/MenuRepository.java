@@ -21,7 +21,7 @@ public interface MenuRepository extends JpaRepository<Menu, Long> {
 
     @Query("""
             SELECT m FROM Menu m
-            WHERE m.id = :id AND m.status = 'ACTIVE'
+            WHERE m.id = :id AND m.status = 'REGISTERED'
             ORDER BY m.isMain DESC, m.id ASC
             """)
     @NonNull

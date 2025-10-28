@@ -14,7 +14,7 @@ public interface ReviewRepository extends JpaRepository<Review, Long> {
     @Query("""
         SELECT R
         FROM Review R
-        WHERE r.restaurant = :restaurant AND r.status = 'ACTIVE'
+        WHERE r.restaurant = :restaurant AND r.status = 'REGISTERED'
         ORDER BY r.id desc
 """)
     List<Review> findByRestaurant(Restaurant restaurant);
@@ -23,7 +23,7 @@ public interface ReviewRepository extends JpaRepository<Review, Long> {
     @Query("""
         SELECT R
         FROM Review R
-        WHERE r.id = :id AND r.status = 'ACTIVE'
+        WHERE r.id = :id AND r.status = 'REGISTERED'
         ORDER BY r.id desc
 """)
     Optional<Review> findById(@NonNull Long id);
