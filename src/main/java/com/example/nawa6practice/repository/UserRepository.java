@@ -28,5 +28,4 @@ public interface UserRepository extends JpaRepository<User, Long> {
                     ORDER BY u.id DESC
             """)
     Optional<User> findById(@NonNull Long id);
-
 }
