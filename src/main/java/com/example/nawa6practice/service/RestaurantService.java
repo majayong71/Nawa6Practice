@@ -43,4 +43,3 @@ public interface RestaurantService {
      **/
     void delete(Long id);
 }
-
