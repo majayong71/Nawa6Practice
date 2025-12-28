@@ -1,2 +1,2 @@
 # Nawa6Practice
-연습용
+개발 진행중
