@@ -6,7 +6,6 @@ import com.example.nawa6practice.domain.Post;
 import com.example.nawa6practice.domain.User;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
-
 import org.springframework.stereotype.Service;
 import com.example.nawa6practice.repository.BookmarkRepository;
 import com.example.nawa6practice.repository.PostRepository;
