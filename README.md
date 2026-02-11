@@ -1,2 +1,3 @@
-# Nawa6Practice
-개발 진행중
+### Nawa6Practice
+
+CRUD 단계 개발 진행중
