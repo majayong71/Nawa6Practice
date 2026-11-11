@@ -12,8 +12,8 @@ import java.util.Optional;
 public interface ReviewRepository extends JpaRepository<Review, Long> {
 
     @Query("""
-        SELECT R
-        FROM Review R
+        SELECT r
+        FROM Review r
         WHERE r.restaurant = :restaurant AND r.status = 'REGISTERED'
         ORDER BY r.id desc
 """)
@@ -21,8 +21,8 @@ public interface ReviewRepository extends JpaRepository<Review, Long> {
 
     @NonNull
     @Query("""
-        SELECT R
-        FROM Review R
+        SELECT r
+        FROM Review r
         WHERE r.id = :id AND r.status = 'REGISTERED'
         ORDER BY r.id desc
 """)

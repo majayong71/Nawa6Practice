@@ -5,13 +5,12 @@ import com.example.nawa6practice.controller.view.HotPost.GetHotPostsRes;
 import com.example.nawa6practice.controller.view.HotPost.RegisterHotPostReq;
 import com.example.nawa6practice.controller.view.HotPost.UpdateHotPostReq;
 import com.example.nawa6practice.domain.HotPost;
+import com.example.nawa6practice.domain.HotPostCategory;
 import com.example.nawa6practice.service.HotPostService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -27,8 +26,8 @@ public class HotPostController {
     }
 
     @GetMapping
-    public GetHotPostsRes gets() {
-        List<HotPost> hotPosts = hotPostService.gets();
+    public GetHotPostsRes gets(@RequestParam HotPostCategory category, @RequestParam LocalDate date) {
+        List<HotPost> hotPosts = hotPostService.gets(category, date);
 
         return new GetHotPostsRes(hotPosts);
     }

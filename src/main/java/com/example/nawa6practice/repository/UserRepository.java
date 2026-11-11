@@ -14,8 +14,8 @@ public interface UserRepository extends JpaRepository<User, Long> {
      */
 
     @Query("""
-                    SELECT COUNT(U) > 0
-                    FROM User U
+                    SELECT COUNT(u) > 0
+                    FROM User u
                     WHERE u.email = :email AND u.status = 'ACTIVE'
                     ORDER BY u.id desc
             """)
@@ -23,7 +23,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     @NonNull
     @Query("""
-                    SELECT U
+                    SELECT u
                     FROM User u
                     WHERE u.id = :id AND u.status = 'ACTIVE'
                     ORDER BY u.id DESC

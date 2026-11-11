@@ -12,8 +12,8 @@ import java.util.Optional;
 public interface RestaurantRepository extends JpaRepository<Restaurant, Long> {
 
     @Query("""
-                    SELECT R
-                    FROM Restaurant R
+                    SELECT r
+                    FROM Restaurant r
                     WHERE r.category = :category AND r.status = 'REGISTERED'
                     ORDER BY r.category DESC
             """)
@@ -21,8 +21,8 @@ public interface RestaurantRepository extends JpaRepository<Restaurant, Long> {
 
     @NonNull
     @Query("""
-                    SELECT R
-                    FROM Restaurant R
+                    SELECT r
+                    FROM Restaurant r
                     WHERE r.id = :id AND r.status = 'REGISTERED'
                     ORDER BY r.id DESC
             """)
@@ -30,8 +30,8 @@ public interface RestaurantRepository extends JpaRepository<Restaurant, Long> {
 
     @NonNull
     @Query("""
-                    SELECT R
-                    FROM Restaurant R
+                    SELECT r
+                    FROM Restaurant r
                     WHERE r.status = 'REGISTERED'
                     ORDER BY r.id DESC
             """)

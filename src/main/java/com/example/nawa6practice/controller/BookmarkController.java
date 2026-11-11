@@ -6,10 +6,7 @@ import com.example.nawa6practice.controller.view.Bookmark.RegisterBookmarkReq;
 import com.example.nawa6practice.domain.Bookmark;
 import com.example.nawa6practice.service.BookmarkService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,15 +22,15 @@ public class BookmarkController {
     }
 
     @GetMapping
-    public GetBookmarksRes gets() {
-        List<Bookmark> bookmarks = bookmarkService.gets();
+    public GetBookmarksRes gets(@RequestParam Long userId) {
+        List<Bookmark> bookmarks = bookmarkService.gets(userId);
 
         return new GetBookmarksRes(bookmarks);
     }
 
     @PostMapping("/delete")
-    public void delete(DeleteBookmarkReq req) {
-        bookmarkService.delete(req.getId());
+    public void delete(@RequestBody DeleteBookmarkReq req) {
+        bookmarkService.delete(req.getId(),req.getUserId());
     }
 }
 

@@ -14,7 +14,7 @@ public interface PostRepository extends JpaRepository<Post, Long> {
 
     @NonNull
     @Query("""
-                        SELECT P
+                        SELECT p
                         FROM Post p
                         WHERE p.id = :id AND p.status = 'REGISTERED'
                         ORDER BY p.createdAt DESC
@@ -22,7 +22,7 @@ public interface PostRepository extends JpaRepository<Post, Long> {
     Optional<Post> findById(@NonNull Long id);
 
     @Query("""
-            SELECT P
+            SELECT p
             FROM Post p
             WHERE p.user.id = :userId AND p.status = 'REGISTERED'
             ORDER BY p.createdAt DESC
@@ -39,29 +39,29 @@ public interface PostRepository extends JpaRepository<Post, Long> {
     List<Post> findAll();
 
     @Query("""
-                    SELECT P
-                    FROM Post P
+                    SELECT p
+                    FROM Post p
                     WHERE p.category = :category AND p.status = 'REGISTERED'
                     ORDER BY p.createdAt DESC
             """)
     List<Post> findByCategory(PostCategory category);
 
     @Query("""
-                       SELECT P
+                       SELECT p
                        FROM Post p
                        WHERE p.title like %:keyword% AND p.status = :status
             """)
     List<Post> searchByTitle(String keyword, PostStatus status);
 
     @Query("""
-                       SELECT P
+                       SELECT p
                        FROM Post p
                        WHERE p.content like %:keyword% AND p.status = :status
             """)
     List<Post> searchByContent(String keyword, PostStatus status);
 
     @Query("""
-                       SELECT P
+                       SELECT p
                        FROM Post p
                        WHERE (p.title like %:keyword% OR p.content like %:keyword%) AND p.status = :status
             """)
